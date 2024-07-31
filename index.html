@@ -15,7 +15,6 @@
 			.centered-container {
   				display: flex;
   				flex-direction: column;
-  				justify-content: flex-start;
   				align-items: center;
 				justify-content: center;
 				min-height: 100vh;
@@ -41,7 +40,6 @@
 		
 			<!--<script src="webgl-debug.js"></script>-->
 		
-		
 			<script>
 				function getChromeVersion() {
 					var raw = navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./);
@@ -56,10 +54,6 @@
 					}
 				}
 			</script>
-		
-		
-			<script>var gopherJSBuild = true;</script>
-		
 		<script>
 			function async_load(file, cb) {
 				var d = document, t = 'script',
@@ -104,12 +98,6 @@
 								go.run(result.instance);
 							});
 						})
-					} else if (gopherJSBuild) {
-						action.innerHTML = "Downloading GopherJS file.";
-
-						async_load("Fyne Demo.js", function(){
-							main.innerHTML = "";
-						});
 					} else {
 						action.innerHTML = "WebAssembly is not supported in your browser";
 						action.className = "action-error"
