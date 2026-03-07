@@ -38,20 +38,6 @@
 		<meta charset="utf-8">
 		<link rel="icon" type="image/png" href="icon.png">
 		
-			<script>
-				function getChromeVersion() {
-					var raw = navigator.userAgent.match(/Chrom(e|ium)\/([0-9]+)\./);
-
-					return raw ? parseInt(raw[2], 10) : 0;
-				}
-
-				var wasmBuild = true;
-				if (window.chrome) {
-					if (getChromeVersion() < 106) {
-						wasmBuild = false;
-					}
-				}
-			</script>
 		<script>
 			function async_load(file, cb) {
 				var d = document, t = 'script',
@@ -77,7 +63,7 @@
 				var main = document.getElementById("main");
 
 				if (webgl_support()) {
-					if (wasmBuild && WebAssembly) {
+					if (WebAssembly) {
 						action.innerHTML = "Downloading wasm_exec.js"
 						async_load("wasm_exec.js", function(){
 							// WebAssembly.instantiateStreaming is not currently available in Safari
@@ -113,7 +99,7 @@
 			<table class="center">
 				<tr><td><img class="application-icon" src="icon.png" alt="Application icon"/></td></tr>
 				<tr><td><div class="centered-text"><div class="application-name">Fyne Demo</div></div></td></tr>
-				<tr><td><div class="centered-text"><div class="application-version">v2.6.0</div></div></td></tr>
+				<tr><td><div class="centered-text"><div class="application-version">v2.7.2</div></div></td></tr>
 				<tr>
 					<td>
 						<picture>
